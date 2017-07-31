@@ -33,7 +33,7 @@ gulp.task('pug', function() {
 
 gulp.task('js', function() {
   return gulp.src([
-    'app/libs/slick-carousel/slick/slick.min.js',
+    'app/libs/bxslider-4/dist/jquery.bxslider.min.js',
     'app/js/common.js' // Всегда в конце
   ])
 		.pipe(plumber())

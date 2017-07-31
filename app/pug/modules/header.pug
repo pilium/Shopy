@@ -1,1 +1,35 @@
 //- header(style={background: 'url(img/top-bg.jpg) center no-repeat'}).site-header
+header
+    .header-top
+        .container
+            .header-contacts
+                a(href="mailto:info@shopy.com").header__mail info@shopy.com
+                a(href="tel:4535534996").header__phone 453 - 5534-996
+            ul.header-social
+                li: a(href="#").header-social__link.header-social__link--fb
+                li: a(href="#").header-social__link.header-social__link--tw
+                li: a(href="#").header-social__link.header-social__link--google
+                li: a(href="#").header-social__link.header-social__link--inst
+
+    .header-bottom.clearfix
+        .container
+            .header__logo
+                img(src="img/logo.png", alt="logo")
+            nav.header-nav
+                ul.header-nav__list
+                    li: a(href="#").active Home
+                    li: a(href="#") Products
+                    li: a(href="#") Hot Deals
+                    li: a(href="#") About
+                    li: a(href="#") Contact
+            .header-action
+                .header-search
+                    span.header-search__icon
+                    //- form.header-search__form
+                    //-     input(type="text")
+                    //-     input(type="submit")
+                .header-user
+                    span.header-user__icon
+                .header-cart
+                    span.header-cart__icon
+                    span.header-cart__number 5
