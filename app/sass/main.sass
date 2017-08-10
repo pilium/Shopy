@@ -1,57 +1,57 @@
 @import "fonts"
 @import "libs"
 @import "vars"
-@import "common"
 @import "_sprite"
 
+@import "common"
 
-// @mixin opacity($opacity)
-// 	opacity: $opacity / 100
-// 	filter: alpha(opacity=$opacity)
-//
-// .preloader
-// 		position: fixed
-// 		left: 0
-// 		right: 0
-// 		top: 0
-// 		bottom: 0
-// 		z-index: 100500
-// 		background-color: grey
-// 		.pulse
-// 			position: relative
-// 			left: 50%
-// 			top: 50vh
-// 			margin:
-// 				left: -40px
-// 				top: -40px
-// 			&::after,&::before
-// 				content: ''
-// 				border: 5px solid #323232
-// 				width: 80px
-// 				height: 80px
-// 				border-radius: 500px
-// 				position: absolute
-// 			&::before
-// 				animation: pulse-outer .8s ease-in infinite
-// 			&::after
-// 				animation: pulse-inner .8s linear infinite
-//
-//
-// @keyframes pulse-outer
-// 	0%
-// 		@include opacity(100)
-// 	50%
-// 		@include opacity(50)
-// 	100%
-// 		@include opacity(0)
-//
-// @keyframes pulse-inner
-// 	0%
-// 		@include opacity(0)
-// 		transform: scale(0)
-// 	100%
-// 		@include opacity(100)
-// 		transform: scale(1)
+
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)
+
+.preloader
+		position: fixed
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		z-index: 100500
+		background-color: #E9E8ED
+		.pulse
+			position: relative
+			left: 50%
+			top: 50vh
+			margin:
+				left: -40px
+				top: -40px
+			&::after,&::before
+				content: ''
+				border: 5px solid #323232
+				width: 80px
+				height: 80px
+				border-radius: 500px
+				position: absolute
+			&::before
+				animation: pulse-outer .8s ease-in infinite
+			&::after
+				animation: pulse-inner .8s linear infinite
+
+@keyframes pulse-outer
+	0%
+		+opacity(100)
+	50%
+		+opacity(50)
+	100%
+		+opacity(0)
+
+@keyframes pulse-inner
+	0%
+		+opacity(0)
+		transform: scale(0)
+	100%
+		+opacity(100)
+		transform: scale(1)
 
 *::-webkit-input-placeholder
 	color: #666
@@ -80,10 +80,10 @@ body input:required:valid,
 body textarea:required:valid
 	color: #666
 
-html, body
-	height: 100%
-  padding: 0
+html,body
+	padding: 0
 	margin: 0
+	height: 100%
 
 body
 	font-size: 16px
@@ -117,10 +117,11 @@ section
 	max-width: 1170px
 	margin: 0 auto
 
-.clearfix
+.clearfix::after
 	content: ""
-  display: table
-  clear: both
+	display: table
+	clear: both
+
 
 .img-responsive
 	display: block
@@ -148,16 +149,16 @@ section
 .header-social__link
 	display: block
 .header-social__link--fb
-	@include sprite($facebook)
+	+sprite($facebook)
 
 .header-social__link--tw
-	@include sprite($twitter)
+	+sprite($twitter)
 
 .header-social__link--google
-	@include sprite($google-)
+	+sprite($google-)
 
 .header-social__link--inst
-	@include sprite($instegram)
+	+sprite($instegram)
 
 .header__mail,
 .header__phone
@@ -168,11 +169,11 @@ section
 .header__mail
 	margin-right: 20px
 	&::before
-		@include sprite($header-mail)
+		+sprite($mail)
 
 .header__phone
 	&::before
-		@include sprite($header-phone)
+		+sprite($header-phone)
 
 .header-bottom
 	padding: 40px 0
@@ -236,11 +237,11 @@ section
 	font-size: 0.625rem
 
 .header-search__icon
-	@include sprite($search)
+	+sprite($search)
 .header-user__icon
-	@include sprite($-user)
+	+sprite($-user)
 .header-cart__icon
-	@include sprite($-cart-orange)
+	+sprite($-cart-orange)
 
 // Index-slider
 .js-index-slider
@@ -303,12 +304,274 @@ span.index-slider__buy
 		display: inline-block
 		margin-right: 5px
 		margin-bottom: -2px
-		@include sprite($-cart-orange)
+		+sprite($-cart-orange)
 
 // arrivals
 .arrivals-content
 	display: flex
 	flex-wrap: wrap
 	justify-content: space-between
+.arrivals
+	.section-title__descr
+		margin-bottom: 20px
+
+
+// Banner
+.banner
+	.container
+		overflow: hidden
+.banner-big
+	float: left
+	width: 100%
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	justify-content: space-around
+	align-items: center
+	flex-wrap: wrap
+	max-width: 630px
+	height: 100px
+	padding: 10px 0 0 60px
+	border: 1px solid $lightBorderColor
+	background-color: #fff
+	img
+		margin-right: 60px
+		vertical-align: middle
+.banner-big__text
+	display: inline-block
+	vertical-align: middle
+	margin-right: 60px
+.banner-big__title
+	display: block
+	+boldFont
+	font-size: 1.375rem
+	text-transform: uppercase
+.banner-big__descr
+	font-size: 0.75rem
+	color: $lightBlueColor
+.banner-big__price
+	+boldFont
+	display: inline-block
+	vertical-align: middle
+	color: $orangeColor
+	font-size: 2rem
+	&::before
+		content: ''
+		display: inline-block
+		+sprite($-add-to-cart)
+		margin-right: 15px
+		cursor: pointer
+
+.banner-small
+	float: right
+	width: 100%
+	max-width: 450px
+	height: 100px
+	padding-top: 10px
+	border: 1px solid $lightBorderColor
+	background-color: #fff
+
+.banner-empty__wrap
+	text-align: center
+
+.banner-empty__text
+	color: $lightBlueColor
+	&.banner-empty__text--orange
+		color: $orangeColor
+
+.banner-size
+	display: block
+	margin-top: 15px
+	font-size: .75rem
+	letter-spacing: 4px
+
+// Best sales
+.best-sales__item-wrap
+	display: flex
+	justify-content: space-around
+	align-items: center
+	flex-wrap: wrap
+
+.best-sales__item
+	position: relative
+	width: 100%
+	max-width: 370px
+	min-height: 170px
+	margin-right: 30px
+	padding: 50px 30px 50px 150px
+	background-color: #fff
+	box-sizing: border-box
+	cursor: pointer
+	&:hover
+		box-shadow: 0 5px 15px 0 rgba(0,0,0,.1)
+		.best-sales__rating,
+		.best-sales__price
+			display: none
+		.best-sales__buy
+			display: block
+	&:nth-of-type(3n)
+		margin-right: 0
+
+.best-sales__img
+	position: absolute
+	top: 40px
+	left: 30px
+
+.best-sales__title
+	display: block
+	margin-bottom: 10px
+	+boldFont
+	font-size: 1.125rem
+
+.best-sales__info
+	position: relative
+	text-align: center
+	&::before
+		content: ''
+		position: absolute
+		top: 10px
+		left: -10px
+		display: block
+		width: 1px
+		height: 55px
+		background-color: #f5f5f6
+
+.best-sales__rating
+	position: absolute
+	padding-left: 5px
+	padding-top: 8px
+	width: 100%
+	max-width: 75px
+
+.rating-wrap
+  height: 12px
+  margin-bottom: 2px
+  position: relative
+
+.rating-color
+  position: absolute
+  top: 0
+  background: #fdcc05
+  height: 12px
+  width: 80%
+
+.rating-stars
+  position: absolute
+  top: 0
+  width: 100%
+  height: 12px
+  background: url(../img/rating_bg.png) no-repeat
+
+.best-sales__price
+	float: right
+	padding-right: 5px
+	+boldFont
+	color: $orangeColor
+
+.best-sales__buy
+	display: none
+	color: $orangeColor
+	&::before
+		content: ''
+		display: inline-block
+		margin-right: 10px
+		+sprite($-add-to-cart)
+
+// subscribe
+.subscribe-content
+	padding: 35px 40px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	flex-wrap: wrap
+
+.subscribe__title
+	margin-right: 25px
+	color: $orangeColor
+	+boldFont
+	font-size: 1.125rem
+	text-transform: uppercase
+
+.subscribe__descr
+	font-style: italic
+
+.subscribe__form
+	float: right
+	width: 100%
+	max-width: 450px
+
+.input-field__wrap
+	position: relative
+	display: flex
+	justify-content: space-between
+	padding-left: 35px
+	&::before
+		content: ''
+		position: absolute
+		left: 0
+		top: 50%
+		transform: translateY(-50%)
+		+sprite($mail)
+
+.input-field
+	width: 100%
+	background: none
+	border: none
+	font-style: italic
+	padding: 5px 0
+	font-size: 1.2rem
+
+
+// footer
+footer
+	padding: 85px 0
+	.container
+		overflow: hidden
+
+.footer-logo
+	display: inline-block
+	vertical-align: top
+	margin-right: 180px
+
+.footer-logo__img
+	margin-bottom: 19px
+
+.footer-copyright
+	display: block
+	font-size: 0.875rem
+	+boldFont
+
+.footer-nav
+	display: inline-block
+	vertical-align: top
+.footer-nav__list
+	display: inline-block
+	vertical-align: top
+	margin-right: 80px
+	line-height: 1.2
+	li
+		margin-bottom: 10px
+		list-style: disc
+		cursor: pointer
+		&:last-child
+			margin-bottom: 0
+		&:hover a
+			color: $orangeColor
+	a
+		font-size: 0.875rem
+		color: #28313b
+
+	&:last-child
+		margin-right: 0
+
+.footer-pay
+	float: right
+	span
+		display: block
+		+boldFont
+		color: $orangeColor
+		margin-bottom: 28px
+
+@import "page/product"
 
 @import "media" // Всегда в конце

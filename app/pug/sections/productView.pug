@@ -1,0 +1,42 @@
+section.product-view
+    .container
+        .product-gallery
+            ul.js-product-view-slider
+                li: img(src="img/viewImg.png", alt="coat")
+                li: img(src="img/viewImg.png", alt="coat")
+                li: img(src="img/viewImg.png", alt="coat")
+            .js-product-view-pager
+                a(href="" data-slide-index="0")
+                    img(src="img/viewPager.png", alt="coat")
+                a(href="" data-slide-index="1")
+                    img(src="img/viewPager1.png", alt="coat")
+                a(href="" data-slide-index="2")
+                    img(src="img/viewPager2.png", alt="coat")
+        .product-info
+            span.product-title FULL WINTER CIT
+            span.product-descr Half Jacket + Skiny Trousers + Boot leather
+            p.product-text Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry
+            .product-settings
+                .product__choose-size
+                    span Choose size
+                    ul.choose-size__list
+                        li S
+                        li N
+                        li.active L
+                        li XL
+                .product__choose-quantity
+                    span Choose Quantity
+                    .choose-quantity
+                        span.quantity-up +
+                        span.quantity-count 0
+                        span.quantitu-down -
+            .product-offer
+                .product-price__wrap
+                    span Price:
+                    span.product-price 120$
+                .product-actions
+                    ul.product-buttons
+                        li: a(href="#").product-web
+                        li: a(href="#").product-buy
+                        li: a(href="#").product-favourite
+                    a(href="#").g-btn Order Now

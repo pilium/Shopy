@@ -1,0 +1,144 @@
+.product-view
+  padding: 100px 0
+  .container
+    overflow: hidden
+
+.product-gallery
+  float: left
+  width: 100%
+  max-width: 500px
+  padding: 0 15px
+
+.js-product-view-slider
+  margin-bottom: 40px
+  img
+    display: block
+    margin: 0 auto
+
+.js-product-view-pager
+  text-align: center
+  a
+    position: relative
+    display: inline-block
+    vertical-align: top
+    width: 100px
+    height: 70px
+    margin: 0 7px
+    background-color: $productBgColor
+    &.active
+      &::after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        display: block
+        background-color: $orangeColor
+        opacity: .8
+  img
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+.product-info
+  float: right
+  width: 100%
+  max-width: 640px
+  > span
+    display: block
+
+.product-title
+  color: $orangeColor
+  +boldFont
+  font-size: 3.25rem
+
+.product-descr
+  margin-bottom: 30px
+  font-size: 1.125rem
+  +semiBoldFont
+
+.product-text
+  font-size: 1rem
+  color: $lightBlueColor
+  line-height: 30px
+
+.product-settings
+  padding: 50px 0
+  border-top: 1px solid $lightGray
+  border-bottom: 1px solid $lightGray
+  overflow: hidden
+
+.product__choose-size,
+.product__choose-quantity
+  & > span
+    margin-right: 25px
+    font-size: 1.125rem
+    color: $mainColor
+
+.product__choose-size
+  float: left
+.product__choose-quantity
+  float: right
+
+.choose-size__list
+  display: inline-block
+  li
+    position: relative
+    display: inline-block
+    margin-right: 8px
+    color: $mainColor
+    font-size: 0.875rem
+    cursor: pointer
+    +lightFont
+    &:last-child
+      margin-right: 0
+      &::after
+        display: none
+    &::after
+      content: '-'
+      position: absolute
+      right: -8px
+      top: -2px
+      color: $mainColor
+    &.active
+      font-size: 1rem
+      color: $orangeColor
+      &::after
+        top: 0
+
+.choose-quantity
+  display: inline-block
+  span
+    margin: 0 15px
+    font-size: 1.125rem
+
+.quantity-up,
+.quantitu-down
+  cursor: pointer
+
+.quantity-count
+  color: $orangeColor
+
+.product-offer
+  overflow: hidden
+
+.product-price__wrap
+  float: left
+  margin-top: 5px
+  span
+    +boldFont
+    color: $mainColor
+    font-size: 1.25rem
+
+.product-actions
+  float: right
+  .product-buttons
+    vertical-align: middle
+    margin-right: 15px
+  .g-btn
+    display: inline-block
+    height: 50px
+    line-height: 50px
+    border-radius: 30px

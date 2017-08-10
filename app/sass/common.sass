@@ -15,23 +15,137 @@
 .section-title__descr
   display: block
   color: $lightBlueColor
+.g-btn
+  border: none
+  background-color: $orangeColor
+  color: #fff
+  line-height: 50px
+  padding: 0 34px
+  cursor: pointer
 
+// product-item
 .product-item
+  position: relative
   background-color: #fff
   width: 100%
-  max-width: 270px
-  padding: 30px 0
-  display: flex
-  flex-direction: column
-  justify-content: space-around
-  align-items: center
+  width: 270px
+  height: 355px
+  padding: 30px 5px
+  margin-bottom: 50px
+  transition: .5s ease
   img
     margin-bottom: 25px
     height: 205px
   span
     +boldFont
     font-size: 1.125rem
+  &:hover
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1)
+
+    .product-item__first
+      display: none
+    .product-item__second
+      opacity: 1
+
 .product-item__title
   margin-bottom: 25px
 .product-item__price
+  color: $orangeColor
+
+.product-item__first
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.product-item__second
+  position: absolute
+  left: 0
+  top: 0
+  opacity: 0
+  text-align: center
+  .product-item__title
+    color: $orangeColor
+
+.product-item__slider
+  img
+    display: block
+    height: 90px
+    margin: 0 auto 20px
+.product-item__sizes
+  text-align: center
+  margin-bottom: 20px
+  +boldFont
+  & > span
+    margin-right: 10px
+    font-size: 0.875rem
+.sizes-list
+  display: inline-block
+  li
+    display: inline-block
+    &::after
+      content: '-'
+      margin-left: 5px
+    &:last-child
+      &:after
+        display: none
+    &.active
+      span
+        color: $orangeColor
+  span
+    font-size: 0.875rem
+    cursor: pointer
+    &:hover,
+      color: $orangeColor
+
+.product-item__colors
+  margin-bottom: 20px
+  a
+    display: inline-block
+    vertical-align: top
+    width: 12px
+    height: 12px
+    border-radius: 50%
+    margin: 0 2px
+
+.product-color__pink
+  background-color: #e12e3f
+.product-color__blue
+  background-color: #34404b
+.product-color__indigo
+  background-color: #3ab3ff
+.product-color__green
+  background-color: #2fd967
+
+.product-item__buttons
+  text-align: center
+  &::before
+    content: ''
+    display: block
+    width: 70%
+    height: 1px
+    margin: 0 auto 30px
+    background-color: $lightGray
+.product-buttons
+  display: inline-block
+  li
+    display: inline-block
+    margin: 0 10px
+  a
+    display: block
+
+.product-web
+  @include sprite($-share)
+.product-buy
+  @include sprite($-add-to-cart)
+.product-favourite
+  @include sprite($-like)
+
+.product-item__more-load
+  display: block
+  width: 100%
+  line-height: 60px
+  font-size: 3rem
+  +boldFont
+  text-align: center
+  background-color: #fff
   color: $orangeColor
