@@ -1,6 +1,6 @@
-$(window).on('load', function() {
+/*$(window).on('load', function() {
   $('.preloader').delay(1000).fadeOut('slow');
-});
+});*/
 
 $(document).ready(function() {
 
@@ -32,5 +32,14 @@ $(document).ready(function() {
     $(this).toggleClass('active');
     $(this).siblings().removeClass('active');
   });
+
+  //Load more button
+  $(function(){
+    $(".none").slice(0,4).show();
+    $("#loadMore").on('click', function(e){
+      e.preventDefault();
+      $(".none:hidden").slice(0,4).slideDown();
+      })
+    })
 
 });

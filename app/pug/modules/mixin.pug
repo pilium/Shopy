@@ -1,5 +1,5 @@
-mixin productItem(product,title,price)
-    .product-item
+mixin productItem(product,title,price,mod)
+    .product-item(class= mod)
         .product-item__first
             img(src=`img/arrivals/${product}.png`, alt=`${product}`)
             span.product-item__title= title
