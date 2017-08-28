@@ -30,12 +30,13 @@ $(document).ready(function() {
   });
 
   //Load more button
-  $(function(){
+  $(function load(){
     $(".none").slice(0,4).show();
     $("#loadMore").on('click', function(e){
       e.preventDefault();
-      $(".none:hidden").slice(0,4).slideDown();
+      $(".none:hidden").slice(0,8).slideDown();
+      $("#loadMore").hide();
       })
-    })
+    });
 
 });
